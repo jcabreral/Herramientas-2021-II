@@ -5,7 +5,7 @@
 #include <cmath>
 
 double mysin(double x, int N); // declaration
-double factorial(int n);
+long double factorial(int n);
 
 int main()
 {
@@ -20,14 +20,14 @@ int main()
         std::cout << NMAX << "\t" << diff << "\n";
     }*/
     
-    std::cout << mysin(x, 1000) << "\t" << exact << "\n";
-    //std::cout << factorial(100) << "\n";
+    //std::cout << mysin(x, 1000) << "\t" << exact << "\n";
+    std::cout << factorial(100) << "\n";
 
     return 0;
 }
-double factorial(int n)
+long double factorial(int n)
 {
-    double fact = 1;
+    long double fact = 1;
     for(int j = 1; j <= n; j++)
     {
         fact *= j;
