@@ -7,6 +7,7 @@
 #sumas.x: sumas.cpp
 #	g++ $< -o $@
 
+all: fig.pdf
 
 sumas.x: sumas.cpp
 %.x: %.cpp
@@ -15,5 +16,10 @@ sumas.x: sumas.cpp
 datos.txt: sumas.x
 	./$< > $@
 
+fig.pdf: plot.gp datos.txt
+	gnuplot $<
+
 clean:
-	rm -f a.out *.x *~ *.txt
+	rm -f a.out *.x *~ *.txt *.pdf
+
+
