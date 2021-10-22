@@ -1,6 +1,7 @@
 //Compara la suma armonica realizada de dos formas
 //diferentes para mostrar las diferencias computacionales
 #include <iostream>
+#include <cmath>
 
 typedef float REAL;
 REAL sumup(int N);
@@ -11,8 +12,12 @@ int main(void)
   std::cout.precision(6);
   std::cout.setf(std::ios::scientific);
   
-  std::cout<< sumup(3) << "\n";
-  std::cout<< sumdown(3) << "\n";
+  for(int ii = 1; ii < 1000; ++ii){
+    REAL suma1 = sumup(ii);
+    REAL suma2 = sumdown(ii);
+    std::cout << ii << "\t" << std::fabs(1 - suma1/suma2) << "\n";
+  }
+  
   return 0;
 }
 
